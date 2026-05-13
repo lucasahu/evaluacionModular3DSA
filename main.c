@@ -7,7 +7,7 @@ struct Parque {
     int cantidadZonas;
     int visitantesHoy;
     struct NodoUsuario *headUsuarios; /* lista simple enlazada de usuarios */
-    struct NodoEntrada *headEntradas; /* arbol binario de busqueda de entradas */
+    struct NodoEntrada *raizEntradas; /* arbol binario de busqueda de entradas */
 };
 
 struct NodoEntrada {
@@ -18,20 +18,22 @@ struct NodoEntrada {
 struct Entrada {
     int id;
     int valor;
-    int tipo; /* infantil, pase rapido,normal */
-    int estado; /* vencida,usada,sin usar,reembolsada/anulada */
+    int tipo; /* infantil, pase rapido,normal,familiar */
+    int estado; /* activa,utilizada,anunalada o vencida */
     struct Usuario *datosUsuario; /* puntero a los datos del usuario propietario */
 };
 
 struct NodoUsuario {
     struct Usuario *datosUsuario; /* puntero a los datos del usuario*/
-    struct NodoUsuario *sig; /* putero al siguiente nodo de usuarios */
+    struct NodoUsuario *sig; /* puntero al siguiente nodo de usuarios */
 };
 
 struct Usuario {
     char *nombre;
     int id;
     int edad;
+    int atendiendo; /* esta o no en el parque */
+    int estuvo; /* estuvo o no en el parque */
     float estatura;
 };
 
@@ -39,7 +41,10 @@ struct Zona {
     char *nombre;
     int codigo;
     char *tematica;
-    struct NodoAtraccion *headAtracciones; /* lista doblemente enlazada de atracciones */
+    int capacidadMax;
+    int ocupacionActual;
+    char *horario;
+    struct NodoAtraccion *headAtracciones; /* lista doblemente enlazada de atracciones con nodo fantasma */
 };
 
 struct NodoAtraccion {
@@ -53,7 +58,7 @@ struct Atraccion {
     int capacidad;
     int ocupacionActual;
     int estado; /*en mantenimiento o funcionando */
-    struct NodoFila *headFila; /* lista simple enlazada de fila */
+    struct NodoFila *headFila; /* lista simple enlazada de fila con nodo fantasma */
 };
 
 struct NodoFila {
