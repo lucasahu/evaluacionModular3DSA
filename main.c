@@ -32,8 +32,8 @@ struct Usuario {
     char *nombre;
     int id;
     int edad;
-    int atendiendo; /* esta o no en el parque */
-    int estuvo; /* estuvo o no en el parque */
+    int estaEnParque; /* esta o no en el parque */
+    int estuvoEnParque; /* estuvo o no en el parque */
     float estatura;
 };
 
@@ -55,7 +55,7 @@ struct NodoAtraccion {
 struct Atraccion {
     char *nombre;
     int codigo;
-    int capacidad;
+    int capacidadMax;
     int ocupacionActual;
     int estado; /*en mantenimiento o funcionando */
     struct NodoFila *headFila; /* lista simple enlazada de fila con nodo fantasma */
