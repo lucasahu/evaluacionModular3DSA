@@ -20,8 +20,13 @@ struct Entrada {
     int valor;
     int tipo; /* infantil, pase rapido,normal,familiar */
     int estado; /* activa,utilizada,anunalada o vencida */
-    struct Usuario *datosUsuario; /* puntero a los datos del usuario propietario */
+    struct NodoUsuarioEntrada *headUsuarios; /* lista simplemente enlazada de los usuarios linkeados a esta entrada */
 };
+
+struct NodoUsuarioEntrada {
+    struct Usuario *datosUsuario;
+    struct NodoUsuarioEntrada *sig;
+}
 
 struct NodoUsuario {
     struct Usuario *datosUsuario; /* puntero a los datos del usuario*/
