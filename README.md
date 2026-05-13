@@ -8,6 +8,8 @@ Codigo fuente de nuestro programa para la evaluacion modular 3 del curso de estr
 - para subir todos los cambios hechos a la rama, usar el comando: git push
 
 
-<img width="960" height="720" alt="fotodibujo" src="https://github.com/user-attachments/assets/5d08394f-27bb-4110-95b7-924adb8f0405" />
+
+<img width="1280" height="720" alt="IMG_0486" src="https://github.com/user-attachments/assets/808a0645-ac24-40a2-8812-30bea13cd8c4" />
+
 
 
