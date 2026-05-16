@@ -26,7 +26,7 @@ struct Entrada {
 struct NodoUsuarioEntrada {
     struct Usuario *datosUsuario;
     struct NodoUsuarioEntrada *sig;
-}
+};
 
 struct NodoUsuario {
     struct Usuario *datosUsuario; /* puntero a los datos del usuario*/
