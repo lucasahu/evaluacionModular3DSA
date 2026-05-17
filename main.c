@@ -91,8 +91,8 @@ void menuUsuarios(struct Parque *parque) {
     int num;
 
     do {
-        printf("Bienvenido al menu de usuarios!\n");
-        printf("Visitantes totales de hoy: %d", parque->visitantesHoy);
+        printf("\n Bienvenido al menu de usuarios!\n");
+        printf("Visitantes totales de hoy: %d\n", parque->visitantesHoy);
         printf("1. Agregar usuario\n");
         printf("2. Eliminar usuario\n");
         printf("3. Buscar usuario\n");
@@ -100,23 +100,96 @@ void menuUsuarios(struct Parque *parque) {
         printf("5. Listar usuarios\n");
         printf("6. Flag Ingreso Parque\n");
         printf("7. Flag Salio Parque\n");
-        printf("8. volver\n");
+        printf("8. Volver\n");
 
-        printf("Porfavor digite una opcion valida del menu: ");
+        printf("\n Porfavor digite una opcion valida del menu: ");
         scanf(" %d", &num);
 
-
-        switch (num) {
-            case 1:
+        switch (num)
+        {
+        default:
+            printf("tu opcion no es valida\n");
+            break;
+        case 1:
+            printf("aqui va func agregarUsuario\n");
+            break;
+        case 2:
+            printf("aqui va func eliminarUsuario\n");
+            break;
+        case 3:
+            printf("aqui va func buscarUsuarioPorId\n");
+            break;
+        case 4:
+            printf("aqui va func modificarUsuario\n");
+            break;
+        case 5:
+            printf("aqui va func listarUsuarios\n");
+            break;
+        case 6:
+            printf("aqui van func flagIngresoParque\n");
+            break;
+        case 7:
+            printf("aqui van func flagSalioParque\n");
+            break;
+        case 8:
+            printf("volviendo al menu principal!\n");
+            break;
         }
-    }
+    } while (num != 8);
+}
+
+void menuEntradas(struct Parque *parque) {
+    int num;
+
+    do {
+        printf("\n Bienvenido al menu de usuarios!\n");
+        printf("Visitantes totales de hoy: %d\n", parque->visitantesHoy);
+        printf("1. Agregar entrada\n");
+        printf("2. Eliminar entrada\n");
+        printf("3. Buscar entrada\n");
+        printf("4. Modificar entrada\n");
+        printf("5. Listar entradas\n");
+        printf("6. Cambiar estado de entrada\n");
+        printf("7. Volver\n");
+
+        printf("\n Porfavor digite una opcion valida del menu: ");
+        scanf(" %d", &num);
+
+        switch (num)
+        {
+        default:
+            printf("tu opcion no es valida\n");
+            break;
+        case 1:
+            printf("aqui va func agregarEntrada\n");
+            break;
+        case 2:
+            printf("aqui va func eliminarEntrada\n");
+            break;
+        case 3:
+            printf("aqui va func buscarEntrada\n");
+            break;
+        case 4:
+            printf("aqui va func modificarEntrada\n");
+            break;
+        case 5:
+            printf("aqui va func listarEntradas\n");
+            break;
+        case 6:
+            printf("aqui van func cambiarEstadoEntrada\n");
+            break;
+        case 7:
+            printf("volviendo al menu principal!\n");
+            break;
+        }
+    } while (num != 7);
 }
 
 void menuIBCLandia(struct Parque *parque) {
     int num;
 
     do {
-        printf("Bienvenido al menu!\n");
+        printf("\n Bienvenido al menu!\n");
         printf("1. Menu de usuarios\n");
         printf("2. Menu de entradas\n");
         printf("3. Menu de zonas\n");
@@ -136,25 +209,25 @@ void menuIBCLandia(struct Parque *parque) {
                 menuUsuarios(parque);
                 break;
             case 2:
-                menuEntradas(parque);
+                /*menuEntradas(parque);*/
                 break;
             case 3:
-                menuZonas(parque);
+                /*menuZonas(parque);*/
                 break;
             case 4:
-                menuAtracciones(parque);
+                /*menuAtracciones(parque);*/
                 break;
             case 5:
-                menuFilas(parque);
+                /*menuFilas(parque);*/
                 break;
             case 6:
-                menuReportes(parque);
+                /*menuReportes(parque);*/
                 break;
             case 7:
                 printf("Esperamos hayas disfrutado de IBCLandia!");
                 break;
         }
-    }while (num != 7);
+    } while (num != 7);
 }
 
 
