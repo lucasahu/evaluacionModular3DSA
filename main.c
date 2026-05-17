@@ -87,6 +87,31 @@ void inicializarParque(struct Parque *parque) {
     }
 }
 
+void menuUsuarios(struct Parque *parque) {
+    int num;
+
+    do {
+        printf("Bienvenido al menu de usuarios!\n");
+        printf("Visitantes totales de hoy: %d", parque->visitantesHoy);
+        printf("1. Agregar usuario\n");
+        printf("2. Eliminar usuario\n");
+        printf("3. Buscar usuario\n");
+        printf("4. Modificar usuario\n");
+        printf("5. Listar usuarios\n");
+        printf("6. Flag Ingreso Parque\n");
+        printf("7. Flag Salio Parque\n");
+        printf("8. volver\n");
+
+        printf("Porfavor digite una opcion valida del menu: ");
+        scanf(" %d", &num);
+
+
+        switch (num) {
+            case 1:
+        }
+    }
+}
+
 void menuIBCLandia(struct Parque *parque) {
     int num;
 
@@ -108,22 +133,22 @@ void menuIBCLandia(struct Parque *parque) {
                 printf("opcion no valida, mejor suerte a la proxima!");
                 break;
             case 1:
-                printf("usuarios no listo aun");
+                menuUsuarios(parque);
                 break;
             case 2:
-                printf("entradas no listo aun");
+                menuEntradas(parque);
                 break;
             case 3:
-                printf("zonas no listo aun");
+                menuZonas(parque);
                 break;
             case 4:
-                printf("atracciones no listo aun");
+                menuAtracciones(parque);
                 break;
             case 5:
-                printf("filas no listo aun");
+                menuFilas(parque);
                 break;
             case 6:
-                printf("reportes no disponibles");
+                menuReportes(parque);
                 break;
             case 7:
                 printf("Esperamos hayas disfrutado de IBCLandia!");
@@ -135,7 +160,7 @@ void menuIBCLandia(struct Parque *parque) {
 
 int main(void) {
     struct Parque *parque;
-    parque = (struct Parque *)malloc(sizeof(struct Parque))
+    parque = (struct Parque *)malloc(sizeof(struct Parque));
 
     if (parque == NULL) {
         printf("No se pudo crear el parque.");
